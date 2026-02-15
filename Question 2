@@ -12,4 +12,5 @@ int main() {
     printf("The uppercase of %c is %c ", charlower,charupper);
     
     return 0;
+
 }
