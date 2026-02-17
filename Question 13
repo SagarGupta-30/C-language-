@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int h, m;
+    scanf("%d %d", &h, &m);
+
+    int hh;
+    char *period;
+
+    if (h < 12) {
+        period = "AM";
+    } else {
+        period = "PM";
+    }
+
+    if (h == 0) {
+        hh = 12;
+    } else if (h > 12) {
+        hh = h - 12;
+    } else {
+        hh = h;
+    }
+
+    printf("%02d:%02d %s\n", hh, m, period);
+
+    return 0;
+}
