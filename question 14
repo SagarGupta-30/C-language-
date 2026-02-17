@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    long a, b;
+    scanf("%ld %ld", &a, &b);
+
+    if ((a % 10) == (b % 10))
+        printf("YES");
+    else
+        printf("NO");
+
+    return 0;
+}
