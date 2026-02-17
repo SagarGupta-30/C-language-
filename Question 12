@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+
+int buildNumber(int a, int b, int c, int d) {
+    int num = a * 1000 + b * 100 + c * 10 + d;   
+    return num * 5;                              
+}
+
+int main() {
+    int A, B, C, D;
+
+    scanf("%d %d %d %d", &A, &B, &C, &D);
+
+    int result = buildNumber(A, B, C, D);
+
+    printf("The number is: %d", result);
+
+    return 0;
+}
