@@ -1,0 +1,13 @@
+
+#include <stdio.h>
+
+int main() {
+    float num;
+    scanf("%f", &num);
+
+    int truncated = (int)num;
+
+    printf("Rounded Value = %d", truncated);
+    
+    return 0;
+}
