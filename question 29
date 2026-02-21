@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    long long a, b;
+    scanf("%lld %lld", &a, &b);
+
+    long long diff = a - b;               // may be negative
+    long long k = (diff >> 63) & 1;       // extracts the sign bit
+
+    long long minimum = a * k + b * (1 - k);
+
+    printf("%lld", minimum);
+    return 0;
+}
