@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    // Keep only the last 4 bits
+    int last4 = n & 15;   // 15 = 1111 in binary
+
+    int count = 0;
+    while(last4 > 0) {
+        count += (last4 & 1);  // check rightmost bit
+        last4 >>= 1;           // shift right
+    }
+
+    printf("%d", count);
+    return 0;
+}
