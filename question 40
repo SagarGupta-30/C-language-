@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int a[10];
+    int index, rotate;
+
+    
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    
+    for (int i = 0; i < 3; i++) {
+        scanf("%d %d", &index, &rotate);
+        a[index] = (a[index] + rotate) % 10;
+    }
+
+  
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}
