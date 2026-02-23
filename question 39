@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    if (N < 1) {
+        printf("INVALID\n");
+        return 0;
+    }
+
+    int c1 = (N % 2 == 0 && N > 10);
+    int c2 = (N > 15 && N % 3 == 0);
+    int c3 = (N % 7 == 0);
+
+    int count = c1 + c2 + c3;
+    const char *result;
+
+    if (count == 3) {
+        result = "SUPERNATURAL";
+    } else if (count == 2) {
+        result = "MIRACULOUS";
+    } else if (count == 1) {
+        result = "MAGICAL";
+    } else {
+        result = "NORMAL";
+    }
+
+    printf("The verdict for the number %d is: %s\n", N, result);
+    return 0;
+}
