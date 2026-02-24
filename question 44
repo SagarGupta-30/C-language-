@@ -1,0 +1,68 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    int s1=0, s2=0, s3=0, s4=0;
+    int a1=0, a2=0, a3=0, a4=0;
+
+    scanf("%d", &n);
+
+    if (n == 0) {
+        printf("Circle\n");
+    } 
+    else if (n == 3) {
+        scanf("%d %d %d", &s1, &s2, &s3);
+        scanf("%d %d %d", &a1, &a2, &a3);
+
+        if (a1 + a2 + a3 != 180 ||
+          a1 <= 0 || a2 <= 0 || a3 <= 0 || a1 >= 180 || a2 >= 180 || a3 >= 180 ||
+        s1 <= 0 || s2 <= 0 || s3 <= 0 || s1 > 1000 || s2 > 1000 || s3 > 1000 ||
+          s1 + s2 <= s3 || s2 + s3 <= s1 || s3 + s1 <= s2) {
+         printf("Invalid Figure\n");
+         return 0;
+}
+        if (s1 == s2 && s2 == s3 && a1 == 60 && a2 == 60 && a3 == 60) {
+            printf("Equilateral Triangle\n");
+        } else if ((s1 == s2 && a1 == a2 && s2 != s3 && a2!=a3) || 
+         (s2 == s3 && a2 == a3 && s3 != s1 && a3!=a1) || 
+         (s1 == s3 && a1 == a3 && s3 != s2 && a3!=a2)) {
+    printf("Isosceles Triangle\n");
+}
+else if (s1 != s2 && s2 != s3 && s1 != s3 && 
+         a1 != a2 && a2 != a3 && a1 != a3) {
+    printf("Scalene Triangle\n");
+} else {
+    printf("Invalid Figure\n");
+}
+
+    } else if (n == 4) {
+        scanf("%d %d %d %d", &s1, &s2, &s3, &s4);
+        scanf("%d %d %d %d", &a1, &a2, &a3, &a4);
+
+        if (a1 + a2 + a3 + a4 != 360 ||
+        a1 <= 0 || a2 <= 0 || a3 <= 0 || a4 <= 0 || a1 >= 180 || a2 >= 180 || a3 >= 180 || a4 >= 180 ||
+      s1 <= 0 || s2 <= 0 || s3 <= 0 || s4 <= 0 || s1 > 1000 || s2 > 1000 || s3 > 1000 || s4 > 1000)
+        {
+           printf("Invalid Figure\n");
+            return 0;
+}
+
+        if (s1 == s2 && s2 == s3 && s3 == s4 && a1 == 90 && a2 == 90 && a3 == 90 && a4 == 90) {
+            printf("Square\n");
+        } else if (s1 == s3 && s2 == s4 && a1 == 90 && a2 == 90 && a3 == 90 && a4 == 90) {
+            printf("Rectangle\n");
+        } else if (s1 == s2 && s2 == s3 && s3 == s4 && !(a1 == 90 && a2 == 90 && a3 == 90 && a4 == 90) 
+           && a1 == a3 && a2 == a4) {
+            printf("Rhombus\n");
+         }  else if (s1 == s3 && s2 == s4 && a1 == a3 && a2 == a4) {
+            printf("Parallelogram\n");
+        } else {
+            printf("Invalid Figure\n");
+        }
+
+    } else {
+        printf("Invalid Figure\n");
+    }
+
+    return 0;
+}
