@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    int absN = abs(N);
+
+    if (N % 2 == 0 && N % 3 == 0 && N % 5 != 0) {
+        printf("A");
+    }
+
+
+    else {
+        int primes[] = {2, 3, 5, 7, 11};
+        int isB = 0;
+
+        if (N > 20) {
+            for (int i = 0; i < 5; i++) {
+                for (int j = i + 1; j < 5; j++) {
+                    if (N == primes[i] * primes[j]) {
+                        isB = 1;
+                        break;
+                    }
+                }
+                if (isB) break;
+            }
+        }
+
+        if (isB) {
+            printf("B");
+        }
+
+
+        else if (
+            absN >= 10 && absN <= 99 &&
+            ((N % 3 == 0 && N % 7 != 0) || (N % 7 == 0 && N % 3 != 0))
+        ) {
+            printf("C");
+        }
+
+   
+        else if (N >= 0) {
+            int root = (int)sqrt(N);
+            if (root * root == N && N < 200) {
+                printf("D");
+            } else {
+                printf("E");
+            }
+        }
+
+   
+        else {
+            printf("E");
+        }
+    }
+
+    return 0;
+}
