@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+    int day, month, year;
+    scanf("%d %d %d", &day, &month, &year);
+
+    int maxDay;
+
+    /* Determine max days in the month */
+    if (month == 2) {
+        /* Leap year check */
+        if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+            maxDay = 29;
+        } else {
+            maxDay = 28;
+        }
+    }
+    else if (month == 4 || month == 6 || month == 9 || month == 11) {
+        maxDay = 30;
+    }
+    else {
+        maxDay = 31;
+    }
+
+    /* Calculate next day */
+    if (day < maxDay) {
+        day = day + 1;
+    } 
+    else {
+        day = 1;
+        if (month < 12) {
+            month = month + 1;
+        } 
+        else {
+            month = 1;
+            year = year + 1;
+        }
+    }
+
+    /* Print with leading zeros */
+    printf("%02d-%02d-%04d", day, month, year);
+
+    return 0;
+}
