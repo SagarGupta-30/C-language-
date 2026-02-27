@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+  int amount,fivehundred,twohundred,onehundred;
+    scanf("%d",&amount);
+    
+    if(amount<=0){
+        printf("Invalid amount");
+    
+    }
+    
+    else{
+    
+    fivehundred=amount/500;
+    amount=amount%500;
+    twohundred=amount/200;
+    amount=amount%200;
+    onehundred=amount/100;
+    amount=amount%100;
+   
+    printf("500-rupee notes: %d\n", fivehundred);
+    printf("200-rupee notes: %d\n", twohundred);
+    printf("100-rupee notes: %d\n", onehundred);
+        
+    }
+    
+    
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
