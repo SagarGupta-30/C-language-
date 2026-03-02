@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    if (n <= 1) {
+        printf("Shape Not Possible");
+        return 0;
+    }
+
+    for (int i = 1; i <= n; i++) {
+        for (int space = 1; space <= n - i; space++) {
+            printf(" ");
+        }
+        for (int star = 1; star <= 2 * i - 1; star++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
