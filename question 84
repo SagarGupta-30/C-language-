@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    /* n = 0 or 1 cannot form a hollow diamond */
+    if (n <= 1) {
+        printf("Shape Not Possible");
+        return 0;
+    }
+
+    int size = 2 * n - 1;
+    int mid = n;
+
+    for (int i = 1; i <= size; i++) {
+        int dist = abs(i - mid);
+        int left = mid - (n - 1 - dist);
+        int right = mid + (n - 1 - dist);
+
+        for (int j = left; j <= right; j++) {
+            if ( (abs(i - mid) + abs(j - mid) == n - 1) ||  // diamond border
+                 (i == mid) ||                              // horizontal diagonal
+                 (j == mid) ) {                             // vertical diagonal
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
