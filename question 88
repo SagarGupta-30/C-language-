@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    long long x, max;
+
+    scanf("%d", &N);
+
+    scanf("%lld", &max);
+
+
+    for(int i = 1; i < N; i++) {
+        scanf("%lld", &x);
+        if(x > max) {
+            max = x;
+        }
+    }
+
+    printf("%lld", max);
+
+    return 0;
+}
