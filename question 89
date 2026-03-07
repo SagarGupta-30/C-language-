@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    long long x, min;
+
+    scanf("%d", &N);
+
+    
+    scanf("%lld", &min);
+
+
+    for(int i = 1; i < N; i++) {
+        scanf("%lld", &x);
+        if(x < min) {
+            min = x;
+        }
+    }
+
+    printf("%lld", min);
+
+    return 0;
+}
