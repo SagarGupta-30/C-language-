@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int N, M;
+    scanf("%d", &N);
+
+    int A[N];
+    for(int i = 0; i < N; i++)
+        scanf("%d", &A[i]);
+
+    scanf("%d", &M);
+
+    int B[M];
+    for(int i = 0; i < M; i++)
+        scanf("%d", &B[i]);
+
+    // If lengths are different, arrays can't be equal
+    if(N != M) {
+        printf("Not Equal");
+        return 0;
+    }
+
+    // Compare element by element
+    for(int i = 0; i < N; i++) {
+        if(A[i] != B[i]) {
+            printf("Not Equal");
+            return 0;
+        }
+    }
+
+    // If all elements matched
+    printf("Equal");
+    return 0;
+}
