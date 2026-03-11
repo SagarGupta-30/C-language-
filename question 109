@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int N;
+    scanf("%d", &N);
+
+    int original = N;
+    int binary = 0;
+    int place = 1;   // stores powers of 10
+
+    // Special case when N = 0
+    if(N == 0) {
+        printf("Binary equivalent of 0: 0");
+        return 0;
+    }
+
+    while(N > 0) {
+        int bit = N % 2;      // get last binary digit
+        binary = binary + bit * place;
+        place *= 10;          // move to next decimal place
+        N /= 2;               // divide by 2
+    }
+
+    printf("Binary equivalent of %d: %d", original, binary);
+    return 0;
+}
