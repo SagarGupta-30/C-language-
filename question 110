@@ -32,6 +32,7 @@ int main() {
         scanf("%d", &arr[i]);
 
     int result = findSecondLargest(arr, n);
+
     printf("%d", result);
 
     return 0;
