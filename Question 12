@@ -13,6 +13,10 @@ int main() {
 
     int result = buildNumber(A, B, C, D);
 
+
+
+
+
     printf("The number is: %d", result);
 
     return 0;
