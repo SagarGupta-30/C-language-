@@ -12,7 +12,7 @@ This repository contains C language code snippets and question-solving programs 
 
 It is focused on building strong programming fundamentals and improving logical thinking.
 
----
+----
 
 ## 📚 Topics Covered
 
